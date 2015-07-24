@@ -8,6 +8,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import darklib.DarkLib;
 import mod.darkness.blocks.BlockManager;
+import mod.darkness.items.ItemManager;
 
 @Mod(modid = Darkness.MODID, version = Darkness.VERSION, name = Darkness.MODNAME)
 public class Darkness {
@@ -24,6 +25,7 @@ public class Darkness {
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) {
         BlockManager.preinit(event);
+        ItemManager.preinint(event);
         DarkLib.preinit(event);
         proxy.preinit(event);
     }
@@ -31,6 +33,7 @@ public class Darkness {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         BlockManager.init(event);
+        ItemManager.init(event);
         DarkLib.init(event);
         proxy.init(event);
     }
@@ -38,6 +41,7 @@ public class Darkness {
     @Mod.EventHandler
     public void postinit(FMLPostInitializationEvent event) {
         BlockManager.postinit(event);
+        ItemManager.postinit(event);
         DarkLib.postinit(event);
         proxy.postinit(event);
     }

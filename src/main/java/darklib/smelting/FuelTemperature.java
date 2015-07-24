@@ -1,4 +1,4 @@
-package darklib.fuel;
+package darklib.smelting;
 
 import darklib.ChancedStack;
 import mod.darkness.items.ItemManager;
@@ -14,12 +14,19 @@ public class FuelTemperature {
     public static final float CHANCE_WOOD_ASH   = 0.3f;
     public static final float CHANCE_CHCOAL_ASH = 0.4f;
 
-    public static final FuelEntry ENTRY_DEFAULT  = new FuelEntry(TEMP_DEFAULT);
-    public static final FuelEntry ENTRY_LOG      = new FuelEntry(TEMP_WOOD,
-            new ChancedStack(ItemManager.itemAsh, CHANCE_WOOD_ASH)); // TODO add chanced ashes
-    public static final FuelEntry ENTRY_PLANK    = new FuelEntry(TEMP_WOOD); // no ashes from logs
-    public static final FuelEntry ENTRY_CHARCOAL = new FuelEntry(TEMP_CHARCOAL,
-            new ChancedStack(ItemManager.itemAsh, CHANCE_CHCOAL_ASH)); // TODO add chanced ashes
+    public static final FuelEntry ENTRY_DEFAULT;
+    public static final FuelEntry ENTRY_LOG;
+    public static final FuelEntry ENTRY_PLANK;
+    public static final FuelEntry ENTRY_CHARCOAL;
+
+    static {
+        ENTRY_CHARCOAL = new FuelEntry(TEMP_CHARCOAL,
+                new ChancedStack(new ItemStack(ItemManager.itemAsh), CHANCE_CHCOAL_ASH));
+        ENTRY_PLANK = new FuelEntry(TEMP_WOOD); // no ashes from logs
+        ENTRY_LOG = new FuelEntry(TEMP_WOOD,
+                new ChancedStack(new ItemStack(ItemManager.itemAsh), CHANCE_WOOD_ASH));
+        ENTRY_DEFAULT = new FuelEntry(TEMP_DEFAULT);
+    }
 
     public static void postinit() {
 

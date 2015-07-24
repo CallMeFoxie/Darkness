@@ -3,7 +3,7 @@ package darklib;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import darklib.fuel.FuelTemperature;
+import darklib.smelting.FuelTemperature;
 
 public class DarkLib {
     public static void preinit(FMLPreInitializationEvent event) {

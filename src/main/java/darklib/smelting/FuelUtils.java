@@ -1,4 +1,4 @@
-package darklib.fuel;
+package darklib.smelting;
 
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;

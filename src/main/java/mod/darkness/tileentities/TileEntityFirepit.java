@@ -2,8 +2,8 @@ package mod.darkness.tileentities;
 
 import darklib.DarkTE;
 import darklib.SimpleInventory;
-import darklib.fuel.FuelTemperature;
-import darklib.fuel.FuelUtils;
+import darklib.smelting.FuelTemperature;
+import darklib.smelting.FuelUtils;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntityFurnace;
@@ -47,6 +47,8 @@ public class TileEntityFirepit extends DarkTE {
         } else if (temperature > 20) { // 20 = ambient temperature...
             temperature--;
         }
+
+        // TODO actual burning process ... different metals requiring different temperatures? Would make sense..
     }
 
     @Override
