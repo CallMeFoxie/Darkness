@@ -1,7 +1,6 @@
 package mod.darkness;
 
 
-import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -10,8 +9,6 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import darklib.DarkLib;
 import mod.darkness.blocks.BlockManager;
 import mod.darkness.items.ItemManager;
-import mod.darkness.logic.InvisibilityCloak;
-import net.minecraftforge.common.MinecraftForge;
 
 @Mod(modid = Darkness.MODID, version = Darkness.VERSION, name = Darkness.MODNAME)
 public class Darkness {
@@ -31,8 +28,6 @@ public class Darkness {
         ItemManager.preinint(event);
         DarkLib.preinit(event);
         proxy.preinit(event);
-
-        new InvisibilityCloak();
     }
 
     @Mod.EventHandler
@@ -41,9 +36,6 @@ public class Darkness {
         ItemManager.init(event);
         DarkLib.init(event);
         proxy.init(event);
-
-        MinecraftForge.EVENT_BUS.register(InvisibilityCloak.INSTANCE);
-        FMLCommonHandler.instance().bus().register(InvisibilityCloak.INSTANCE);
     }
 
     @Mod.EventHandler

@@ -9,13 +9,16 @@ import net.minecraft.item.Item;
 public class ItemManager {
     public static Item itemAsh;
     public static Item itemCloak;
+    public static Item itemDarkPickaxe;
 
     public static void preinint(FMLPreInitializationEvent event) {
         itemAsh = new Item().setUnlocalizedName("ashes").setTextureName("ashes");
         itemCloak = new ItemCloak();
+        itemDarkPickaxe = new ItemDarkPickaxe();
 
         Registrator.registerItem(itemAsh);
         Registrator.registerItem(itemCloak);
+        Registrator.registerItem(itemDarkPickaxe);
     }
 
     public static void init(FMLInitializationEvent event) {
