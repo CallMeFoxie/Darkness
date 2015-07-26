@@ -3,10 +3,8 @@ package mod.darkness.tileentities;
 import darklib.DarkTE;
 import darklib.SimpleInventory;
 import darklib.smelting.FuelTemperature;
-import darklib.smelting.FuelUtils;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.tileentity.TileEntityFurnace;
 
 public class TileEntityFirepit extends DarkTE {
     private static final float WARMING_MULT = 4f;
@@ -23,7 +21,7 @@ public class TileEntityFirepit extends DarkTE {
 
     @Override
     public void updateEntity() {
-        if (fuelRemaining > 0) {
+        /*if (fuelRemaining > 0) {
             if (fuelEntry.temperature > temperature)
                 fuelRemaining -= WARMING_MULT - 1;
             else
@@ -46,9 +44,13 @@ public class TileEntityFirepit extends DarkTE {
             temperature = Math.min(fuelEntry.temperature, temperature + 1);
         } else if (temperature > 20) { // 20 = ambient temperature...
             temperature--;
-        }
+        }*/
+        // scrap that, we are not making crazy mod
 
-        // TODO actual burning process ... different metals requiring different temperatures? Would make sense..
+        if (fuelRemaining > 0) {
+            fuelRemaining--;
+            // TODO actual smelting process ... different metals requiring different temperatures? Would make sense..
+        }
     }
 
     @Override
